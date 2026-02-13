@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scrollix Privacy Policy - How we collect, use, and protect your data">
+    <title>Privacy Policy - Scrollix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .last-updated {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-links {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .nav-links a {
+            color: #4456BB;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        h2 {
+            color: #4456BB;
+            font-size: 1.75rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4456BB;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: #4456BB;
+        }
+
+        .contact-info a {
+            color: #4456BB;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+
+            .header {
+                padding: 30px 15px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Scrollix_LOGO_Transparent.png" alt="Scrollix Logo" class="logo">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: February 7, 2026</p>
+    </div>
+
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Home</a>
+        </div>
+
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>
+                Scrollix LLC ("we," "us," or "our") operates the Scrollix desktop application (the "App").
+                This Privacy Policy explains how we collect, use, disclose, and safeguard your information
+                when you use our App. By using Scrollix, you agree to the collection and use of information
+                in accordance with this policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>2. Information We Collect</h2>
+
+            <h3>2.1 User Account Information</h3>
+            <ul>
+                <li><strong>Email address:</strong> Used for account identification and password reset</li>
+                <li><strong>Password:</strong> Stored as a hashed value using PBKDF2-SHA256 with salt</li>
+                <li><strong>Name fields:</strong> Optional first name and last name for personalization</li>
+            </ul>
+
+            <h3>2.2 Instagram Account Information</h3>
+            <ul>
+                <li><strong>Instagram username and user ID:</strong> Retrieved via Instagram API</li>
+                <li><strong>Profile information:</strong> Name and profile picture URL</li>
+                <li><strong>Business account status:</strong> Whether the connected account is a business account</li>
+                <li><strong>OAuth tokens:</strong> Access tokens and refresh tokens (encrypted at rest)</li>
+            </ul>
+
+            <h3>2.3 Content You Create</h3>
+            <ul>
+                <li><strong>Post content:</strong> Captions, hashtags, images, videos</li>
+                <li><strong>Scheduling information:</strong> Scheduled publication times, post status, metadata</li>
+                <li><strong>AI-generated content:</strong> Captions generated by Google Gemini AI (if used)</li>
+            </ul>
+
+            <h3>2.4 Password Reset Data</h3>
+            <ul>
+                <li><strong>Reset requests:</strong> Timestamp of password reset requests</li>
+                <li><strong>Reset tokens:</strong> SHA-256 hashed tokens with 1-hour expiration</li>
+            </ul>
+
+            <h3>2.5 Usage and Diagnostic Information</h3>
+            <ul>
+                <li><strong>App usage statistics:</strong> Features used, error logs, crash reports</li>
+                <li><strong>Device information:</strong> Operating system version, app version, device identifiers</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the collected information for the following purposes:</p>
+            <ul>
+                <li><strong>Core Services:</strong> Authenticate users, manage Instagram connections, schedule and publish posts</li>
+                <li><strong>App Improvement:</strong> Analyze usage patterns, fix bugs, improve features</li>
+                <li><strong>Security and Compliance:</strong> Prevent fraud, enforce terms of service, comply with legal obligations</li>
+                <li><strong>Communication:</strong> Send password reset emails, service announcements (via Brevo email service)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Third-Party Integrations</h2>
+
+            <h3>4.1 Meta/Instagram</h3>
+            <p>
+                We use the Instagram Graph API to authenticate your Instagram Business account and publish
+                posts on your behalf. Your Instagram OAuth tokens are encrypted and stored locally on your device.
+            </p>
+
+            <h3>4.2 Google Gemini AI</h3>
+            <p>
+                If you use the AI caption generation feature, your uploaded images are sent to Google Gemini
+                for analysis. Google's use of this data is governed by their privacy policy.
+            </p>
+
+            <h3>4.3 Google Cloud Storage (GCS)</h3>
+            <p>
+                If you provide your own GCS bucket credentials during onboarding, uploaded media files are
+                temporarily stored in YOUR GCS bucket (not ours) before publishing to Instagram. You control
+                this bucket and its data retention policies.
+            </p>
+
+            <h3>4.4 Brevo Email Service</h3>
+            <p>
+                We use Brevo to send transactional emails (password reset emails). Brevo's use of your email
+                address is governed by their privacy policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>5. Data Storage and Security</h2>
+
+            <h3>5.1 Local Storage</h3>
+            <p>
+                All user data (account info, Instagram tokens, posts, schedules) is stored locally on your
+                device in a SQLite database. We do NOT store your data on our servers.
+            </p>
+
+            <h3>5.2 Temporary Files</h3>
+            <p>
+                Uploaded media files are temporarily stored on your device during processing and deleted
+                after successful upload to Instagram.
+            </p>
+
+            <h3>5.3 Security Measures</h3>
+            <ul>
+                <li><strong>Encryption:</strong> Instagram OAuth tokens are encrypted at rest using Fernet encryption</li>
+                <li><strong>Password hashing:</strong> User passwords are hashed using PBKDF2-SHA256 with salt</li>
+                <li><strong>Secure communication:</strong> All API requests use HTTPS</li>
+                <li><strong>File permissions:</strong> Local database and files are protected by OS-level permissions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Your Rights</h2>
+            <p>You have the following rights regarding your data:</p>
+            <ul>
+                <li><strong>Access:</strong> View all data stored in the app via the app interface</li>
+                <li><strong>Deletion:</strong> Delete individual posts, schedules, or your entire account</li>
+                <li><strong>Account Removal:</strong> Uninstall the app to permanently remove all local data</li>
+                <li><strong>Instagram Revocation:</strong> Revoke Scrollix's access to your Instagram account at any time via Instagram settings</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>7. Data Sharing and Disclosure</h2>
+            <p>
+                We do NOT sell, trade, or rent your personal information to third parties. We only share data
+                with third-party services (Meta/Instagram, Google Gemini, Brevo) as necessary to provide the
+                App's core functionality, as described in Section 4.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>8. Children's Privacy</h2>
+            <p>
+                Scrollix is not intended for use by individuals under the age of 13. We do not knowingly
+                collect personal information from children under 13. If you become aware that a child has
+                provided us with personal information, please contact us at
+                <a href="mailto:support@scrollix.app">support@scrollix.app</a>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>9. Changes to This Privacy Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. We will notify you of any changes by
+                posting the new Privacy Policy on this page and updating the "Last Updated" date. You are
+                advised to review this Privacy Policy periodically for any changes.
+            </p>
+        </div>
+
+        <div class="contact-info">
+            <h3>10. Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+            <p>
+                <strong>Scrollix LLC</strong><br>
+                Fort Collins, CO<br>
+                Email: <a href="mailto:support@scrollix.app">support@scrollix.app</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
