@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Scrollix</title>
+    <meta name="description" content="Get help with Scrollix. Contact support, find answers to common issues, and request refunds.">
+    <link rel="icon" href="assets/images/Scrollix_LOGO_Transparent.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/Scrollix_LOGO_Transparent.png" alt="Scrollix">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+            </div>
+            <button class="cta-button nav-cta">Buy Scrollix</button>
+        </div>
+    </nav>
+
+    <!-- Support Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Scrollix Support</h1>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="support-section">
+        <div class="container">
+            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="email">Your Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="you@example.com"
+                        class="form-input"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Support Category *</label>
+                    <select id="category" name="category" required class="form-select">
+                        <option value="">Select a category...</option>
+                        <option value="refund">Refund Request</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="presale">Pre-Sale Question</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows="8"
+                        placeholder="Please describe your issue or question in detail..."
+                        class="form-textarea"
+                    ></textarea>
+                    <p class="form-hint">For bug reports, please include your operating system (Windows/macOS) and version, plus Scrollix version.</p>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+
+                <div id="form-status" class="form-status" style="display: none;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Common Issues -->
+    <section class="support-section">
+        <div class="container">
+            <h2>Common Issues</h2>
+
+            <details class="faq-item">
+                <summary>Instagram Connection Issues</summary>
+                <div>
+                    <h4>OAuth failed</h4>
+                    <p>Try these steps:</p>
+                    <ol>
+                        <li>Clear your browser cookies and cache</li>
+                        <li>Make sure you're logged into Instagram in your browser</li>
+                        <li>Try connecting again</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Serial Number Issues</summary>
+                <div>
+                    <h4>Serial invalid</h4>
+                    <p>Double-check for typos. Serial format is: SCRX-XXXX-XXXX-XXXX (uppercase letters and numbers only).</p>
+
+                    <h4>Already activated on 2 machines</h4>
+                    <p>Each serial can be activated on up to 2 machines. To transfer your license, use the contact form above and select "General Inquiry".</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/Scrollix_LOGO_Transparent.png" alt="Scrollix">
+                    <p>AI-powered Instagram scheduling for authentic creators.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pricing">Pricing</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="refund-policy.html">Refund Policy</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <a href="support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Scrollix LLC. All rights reserved.</p>
+                <p>Windows & macOS supported</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/device-detect.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/support-form.js"></script>
+</body>
+</html>
