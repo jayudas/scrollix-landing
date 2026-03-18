@@ -44,41 +44,20 @@ function handleCTAClick() {
     return;
   }
 
-  // Collect customer email
-  const email = prompt('Enter your email to receive your serial number after purchase:');
-
-  if (!email) {
-    alert('Email is required to receive your Scrollix serial number.');
-    return;
-  }
-
-  // Email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  // Open Paddle checkout
+  // Open Paddle checkout directly - Paddle collects email as part of checkout
   try {
     Paddle.Checkout.open({
       items: [{
         priceId: 'pri_01km1jatz88rf3zechg9cxe4px', // $1 test price
         quantity: 1
       }],
-      customData: {
-        email: email // CRITICAL: Passed to webhook as data.custom_data.email
-      },
-      customer: {
-        email: email // Pre-fill email in checkout form
-      },
       settings: {
         displayMode: 'overlay',
         theme: 'light',
         locale: 'en'
       },
       successCallback: (data) => {
-        handlePurchaseSuccess(email);
+        handlePurchaseSuccess();
       },
       closeCallback: () => {
         console.log('Checkout closed by user');
@@ -90,9 +69,9 @@ function handleCTAClick() {
   }
 }
 
-function handlePurchaseSuccess(email) {
+function handlePurchaseSuccess() {
   // Unified message (desktop = mobile, both get email with download links)
-  const message = `Thank you for purchasing Scrollix!\n\nYour serial number and download links have been sent to ${email}.\n\nCheck your inbox (and spam folder) for an email from noreply@scrollix.app.`;
+  const message = `Thank you for purchasing Scrollix!\n\nYour serial number and download links have been sent to your email.\n\nCheck your inbox (and spam folder) for an email from noreply@scrollix.app.`;
 
   alert(message);
 
