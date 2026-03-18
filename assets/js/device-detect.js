@@ -21,7 +21,7 @@ function updateCTAs() {
       btn.textContent = `Buy Scrollix for Desktop — ${price}`;
     });
     ctaSubtext.forEach(text => {
-      text.textContent = '7-day money-back guarantee • Get instant access • Windows & macOS';
+      text.textContent = '14-day money-back guarantee • Get instant access • Windows & macOS';
     });
   } else {
     // Desktop CTAs - user is already on desktop
@@ -29,7 +29,7 @@ function updateCTAs() {
       btn.textContent = `Buy Scrollix — ${price}`;
     });
     ctaSubtext.forEach(text => {
-      text.textContent = '7-day money-back guarantee • Get instant access • Windows & macOS';
+      text.textContent = '14-day money-back guarantee • Get instant access • Windows & macOS';
     });
   }
 }
