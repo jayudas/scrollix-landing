@@ -1,45 +1,50 @@
 /**
  * Scrollix Website - Main JavaScript
  * Handles CTA clicks, Paddle integration, and purchase flow
+ * Phase 2: Paddle Checkout Integration (LIVE - Testing with $1 price)
  */
 
-// ============================================================================
-// PHASE 1: Placeholder (No Paddle yet)
-// ============================================================================
+let paddleInitialized = false;
 
-function handleCTAClick() {
-  alert('Scrollix will be available for purchase soon! Check back later.');
-
-  // TODO PHASE 2: Replace with Paddle checkout (see implementation plan)
-}
-
-// Attach to all CTA buttons
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.cta-button').forEach(btn => {
-    btn.addEventListener('click', handleCTAClick);
-  });
-});
-
-// ============================================================================
-// PHASE 2: Paddle Checkout Integration (Uncomment when ready)
-// ============================================================================
-
-/*
 // Load Paddle.js
-const paddleScript = document.createElement('script');
-paddleScript.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
-paddleScript.async = true;
-document.head.appendChild(paddleScript);
+const script = document.createElement('script');
+script.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
+script.async = true;
+document.head.appendChild(script);
 
 // Wait for Paddle to load
-paddleScript.onload = () => {
-  Paddle.Initialize({
-    token: 'PADDLE_CLIENT_TOKEN_HERE', // TODO PHASE 2: Get from Paddle dashboard
-    environment: 'production' // or 'sandbox' for testing
-  });
+script.onload = () => {
+  try {
+    Paddle.Initialize({
+      token: 'live_f38bec1927b616e8022de957f8d',
+      environment: 'production',
+      eventCallback: (event) => {
+        // Log checkout events for debugging
+        if (event.name === 'checkout.error') {
+          console.error('Paddle checkout error:', event.data);
+        }
+      }
+    });
+    paddleInitialized = true;
+    console.log('Paddle initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize Paddle:', error);
+    alert('Payment system unavailable. Please try again later or contact support@scrollix.app');
+  }
+};
+
+script.onerror = () => {
+  console.error('Failed to load Paddle.js');
+  alert('Payment system failed to load. Please refresh the page or contact support@scrollix.app');
 };
 
 function handleCTAClick() {
+  // Check if Paddle loaded
+  if (!paddleInitialized) {
+    alert('Payment system is still loading. Please try again in a moment.');
+    return;
+  }
+
   // Collect customer email
   const email = prompt('Enter your email to receive your serial number after purchase:');
 
@@ -56,68 +61,49 @@ function handleCTAClick() {
   }
 
   // Open Paddle checkout
-  Paddle.Checkout.open({
-    items: [{
-      priceId: 'PADDLE_PRICE_ID_HERE', // TODO PHASE 2: Get from Paddle dashboard
-      quantity: 1
-    }],
-    customData: {
-      email: email // CRITICAL: This gets passed to webhook as data.custom_data.email
-    },
-    successCallback: (data) => {
-      handlePurchaseSuccess(email);
-    },
-    closeCallback: () => {
-      console.log('Checkout closed');
-    }
-  });
+  try {
+    Paddle.Checkout.open({
+      items: [{
+        priceId: 'pri_01km1jatz88rf3zechg9cxe4px', // $1 test price
+        quantity: 1
+      }],
+      customData: {
+        email: email // CRITICAL: Passed to webhook as data.custom_data.email
+      },
+      customer: {
+        email: email // Pre-fill email in checkout form
+      },
+      settings: {
+        displayMode: 'overlay',
+        theme: 'light',
+        locale: 'en'
+      },
+      successCallback: (data) => {
+        handlePurchaseSuccess(email);
+      },
+      closeCallback: () => {
+        console.log('Checkout closed by user');
+      }
+    });
+  } catch (error) {
+    console.error('Failed to open Paddle checkout:', error);
+    alert('Failed to open checkout. Please try again or contact support@scrollix.app');
+  }
 }
 
 function handlePurchaseSuccess(email) {
-  // Show success message
-  const message = isMobileDevice()
-    ? `Thank you for purchasing Scrollix!\n\nYour serial number and download link have been sent to ${email}.\n\nCheck your inbox (and spam folder) for an email from noreply@scrollix.app.`
-    : `Thank you for purchasing Scrollix!\n\nYour serial number has been sent to ${email}.\n\nCheck your inbox (and spam folder) for an email from noreply@scrollix.app.\n\nDownload link: [TODO PHASE 3: Add R2 download URL]`;
+  // Unified message (desktop = mobile, both get email with download links)
+  const message = `Thank you for purchasing Scrollix!\n\nYour serial number and download links have been sent to ${email}.\n\nCheck your inbox (and spam folder) for an email from noreply@scrollix.app.`;
 
   alert(message);
 
-  // TODO PHASE 3: Trigger download for desktop users
-  // if (!isMobileDevice()) {
-  //   window.location.href = getDownloadUrl();
-  // }
-}
-*/
-
-// ============================================================================
-// PHASE 3: Download Links (Uncomment when R2 ready)
-// ============================================================================
-
-/*
-function getDownloadUrl() {
-  // Detect Mac architecture (ARM vs Intel)
-  // Note: userAgent doesn't reliably detect ARM, default to ARM (most new Macs)
-  const isIntel = /Intel Mac/.test(navigator.userAgent);
-
-  if (isIntel) {
-    return 'https://downloads.scrollix.app/mac/Scrollix-1.0.0-x64.dmg';
-  } else {
-    return 'https://downloads.scrollix.app/mac/Scrollix-1.0.0-arm64.dmg';
-  }
+  // Note: No auto-download. User gets email with download links for all platforms.
+  // This works for both desktop and mobile users (unified flow)
 }
 
-function handlePurchaseSuccess(email) {
-  if (isMobileDevice()) {
-    // Mobile: Email only
-    alert(`Thank you for purchasing Scrollix!\n\nYour serial number and download link have been sent to ${email}.\n\nCheck your inbox for an email from noreply@scrollix.app.`);
-  } else {
-    // Desktop: Show download button
-    const downloadUrl = getDownloadUrl();
-
-    const message = `Thank you for purchasing Scrollix!\n\nYour serial number has been sent to ${email}.\n\nClick OK to download Scrollix for macOS.`;
-    alert(message);
-
-    // Trigger download
-    window.location.href = downloadUrl;
-  }
-}
-*/
+// Attach to all CTA buttons
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.cta-button').forEach(btn => {
+    btn.addEventListener('click', handleCTAClick);
+  });
+});
