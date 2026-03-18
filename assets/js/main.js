@@ -17,7 +17,6 @@ script.onload = () => {
   try {
     Paddle.Initialize({
       token: 'live_f38bec1927b616e8022de957f8d',
-      environment: 'production',
       eventCallback: (event) => {
         // Log checkout events for debugging
         if (event.name === 'checkout.error') {
