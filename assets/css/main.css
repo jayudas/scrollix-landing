@@ -1018,6 +1018,50 @@ a.download-button:hover {
     color: var(--color-text-light);
 }
 
+.download-os-heading {
+    font-size: 1.3rem;
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.arch-help {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.arch-help-trigger {
+    position: relative;
+    color: var(--color-primary);
+    font-weight: 700;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+.arch-help-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    max-width: 90vw;
+    background: var(--color-text);
+    color: white;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.arch-help-trigger:hover .arch-help-tooltip,
+.arch-help-trigger:focus .arch-help-tooltip {
+    display: block;
+}
+
 /* Footer */
 .footer {
     background: var(--color-text);
