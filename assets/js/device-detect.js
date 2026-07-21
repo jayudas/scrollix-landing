@@ -13,7 +13,7 @@ function updateCTAs() {
   const ctaButtons = document.querySelectorAll('.cta-button');
   const ctaSubtext = document.querySelectorAll('.cta-subtext');
 
-  const price = '$33';
+  const price = '$33.33';
 
   if (isMobileDevice()) {
     // Mobile CTAs - user is on mobile, tell them it's for desktop
