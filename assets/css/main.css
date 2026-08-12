@@ -972,6 +972,87 @@ a:hover {
     font-weight: 700;
 }
 
+/* Open-source licence notice (GPL compliance - bundled FFmpeg/x264).
+   The written offer must remain publicly visible for at least 3 years
+   after the last distribution of the binaries it covers. */
+.licence-note {
+    max-width: 700px;
+    margin: var(--spacing-lg) auto 0;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border, rgba(0, 0, 0, 0.1));
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.licence-note h2 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.licence-note p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Scoped with :not() so it cannot override .licence-source-button below —
+   that button's label is white on the primary colour, and an unscoped
+   `.licence-note a { color: primary }` rendered it purple-on-purple. */
+.licence-note a:not(.licence-source-button):not(.licence-source-url) {
+    color: var(--color-primary);
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.licence-note .licence-offer {
+    font-size: 0.82rem;
+    opacity: 0.85;
+}
+
+/* Secondary-weight button: same affordance as the in-app Licences section,
+   deliberately lighter than .download-button so it does not compete with
+   the actual download call-to-action above it. */
+.licence-source-button,
+.licence-source-button:link,
+.licence-source-button:visited {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.licence-source-button:hover,
+.licence-source-button:focus {
+    opacity: 0.85;
+    color: #fff;
+}
+
+/* The literal URL stays visible for anyone auditing compliance, but small
+   enough that the button remains the primary affordance. */
+.licence-source-url,
+.licence-source-url:link,
+.licence-source-url:visited {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--color-text-light);
+    opacity: 0.75;
+    word-break: break-all;
+    text-decoration: underline;
+}
+
+.licence-source-url:hover,
+.licence-source-url:focus {
+    opacity: 1;
+    color: var(--color-primary);
+}
+
 .download-buttons {
     display: flex;
     justify-content: center;
