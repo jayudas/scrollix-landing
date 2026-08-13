@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download - Scrollix</title>
-    <meta name="description" content="Download Scrollix for macOS (Apple Silicon and Intel). Windows coming soon.">
+    <meta name="description" content="Download Scrollix for macOS (Apple Silicon and Intel) and Windows 10 & 11 (64-bit).">
     <link rel="icon" href="assets/images/Scrollix_LOGO_Transparent.png">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -34,7 +34,7 @@
     <!-- Download Section -->
     <section class="download-section">
         <div class="container">
-            <p class="download-note">⚠️ Scrollix requires a valid serial number, sent to your email after purchase. This is a paid product — there is no free trial. Haven't purchased yet? <a href="index.html#pricing">Buy Scrollix here</a>.</p>
+            <p class="download-note">⚠️ Scrollix requires a valid serial number, sent to your email after purchase. Haven't purchased yet? <a href="index.html#pricing">Buy Scrollix here</a>.</p>
 
             <!-- macOS group -->
             <h2 class="download-os-heading">macOS</h2>
@@ -51,7 +51,26 @@
             <!-- Windows group -->
             <h2 class="download-os-heading">Windows</h2>
             <div class="download-buttons">
-                <span class="download-button download-disabled">Windows<br><span class="download-arch">Coming Soon</span></span>
+                <a id="download-win-x64" class="download-button" href="https://github.com/scrollixapp/scrollix-releases/releases/latest">Download for Windows<br><span class="download-arch">Windows 10 &amp; 11 (64-bit)</span></a>
+            </div>
+
+            <div class="win-notice">
+                <h3>Windows may show security warnings. Here's why, and what to do.</h3>
+                <p>Scrollix is digitally signed by <strong>Scrollix LLC</strong> through Microsoft's own code-signing service. However, Windows sometimes still warns about newly released software versions.</p>
+                <p>You may see up to two prompts:</p>
+                <ol class="win-steps">
+                    <li>
+                        <strong>In your browser, while downloading.</strong>
+                        Your browser may say the file "isn't commonly downloaded." Choose to keep it.
+                        <span class="win-step-detail">In Edge, click the <strong>⋯</strong> next to the download → <strong>Keep</strong> → <strong>Keep anyway</strong>. In Chrome, click <strong>Keep</strong> if prompted.</span>
+                    </li>
+                    <li>
+                        <strong>When you open the installer.</strong>
+                        Windows may show a blue "Windows protected your PC" screen.
+                        <span class="win-step-detail">Click <strong>More info</strong>, check that the publisher line reads <strong>Scrollix LLC</strong>, then click <strong>Run anyway</strong>.</span>
+                    </li>
+                </ol>
+                <p class="win-verify"><strong>That publisher line is your real security check.</strong> It comes from our digital signature and cannot be forged. If it says anything other than <strong>Scrollix LLC</strong>, do not run the file — email <a href="mailto:support@scrollix.app">support@scrollix.app</a> instead.</p>
             </div>
 
             <p id="download-version" class="download-version"></p>

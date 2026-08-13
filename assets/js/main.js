@@ -64,7 +64,8 @@ function handlePurchaseSuccess() {
 async function initDownloadLinks() {
   const armLink = document.getElementById('download-mac-arm64');
   const x64Link = document.getElementById('download-mac-x64');
-  if (!armLink && !x64Link) {
+  const winLink = document.getElementById('download-win-x64');
+  if (!armLink && !x64Link && !winLink) {
     return; // Page has no download section
   }
   try {
@@ -80,12 +81,16 @@ async function initDownloadLinks() {
 
     const armAsset = assets.find(a => a.name.endsWith('-mac-arm64.dmg'));
     const x64Asset = assets.find(a => a.name.endsWith('-mac-x64.dmg'));
+    const winAsset = assets.find(a => a.name.endsWith('-win-x64.exe'));
 
     if (armLink && armAsset) {
       armLink.href = armAsset.browser_download_url;
     }
     if (x64Link && x64Asset) {
       x64Link.href = x64Asset.browser_download_url;
+    }
+    if (winLink && winAsset) {
+      winLink.href = winAsset.browser_download_url;
     }
 
     const versionEl = document.getElementById('download-version');
