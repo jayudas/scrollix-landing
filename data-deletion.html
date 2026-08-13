@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scrollix Data Deletion Instructions - How to delete your Scrollix data">
+    <title>Data Deletion Instructions - Scrollix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .last-updated {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-links {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .nav-links a {
+            color: #4456BB;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        h2 {
+            color: #4456BB;
+            font-size: 1.75rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f1f3f5;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #333;
+            word-break: break-all;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .callout {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4456BB;
+            margin: 30px 0;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4456BB;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: #4456BB;
+        }
+
+        .contact-info a {
+            color: #4456BB;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+
+            .header {
+                padding: 30px 15px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/images/Scrollix_LOGO_Transparent.png" alt="Scrollix Logo" class="logo">
+        <h1>Data Deletion Instructions</h1>
+        <p class="last-updated">Last Updated: August 13, 2026</p>
+    </div>
+
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>
+                Scrollix is a desktop application. It runs entirely on your own computer. Scrollix LLC
+                operates no servers, no database, and no cloud storage that holds your data — we keep no
+                copy of anything you create in the App.
+            </p>
+            <div class="callout">
+                <p>
+                    <strong>Because we hold no copy of your data, there is no deletion request to submit
+                    to us.</strong> You delete your data directly, and it is permanently gone. The steps
+                    below show you exactly where that data lives and how to remove it.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>1. Delete Your Local Scrollix Data</h2>
+            <p>
+                All of your Scrollix data — your account, your Instagram access tokens, your posts, your
+                schedules, and your logs — is stored in a single folder on your computer.
+            </p>
+
+            <h3>macOS</h3>
+            <ol>
+                <li>Quit Scrollix completely (<code>Cmd + Q</code>).</li>
+                <li>Open Finder, then press <code>Cmd + Shift + G</code>.</li>
+                <li>Enter: <code>~/Library/Application Support/Scrollix</code></li>
+                <li>Move that entire <code>Scrollix</code> folder to the Trash, then empty the Trash.</li>
+                <li>To remove the App itself, drag <code>Scrollix</code> from your Applications folder to the Trash.</li>
+            </ol>
+
+            <h3>Windows</h3>
+            <ol>
+                <li>Quit Scrollix completely.</li>
+                <li>Press <code>Win + R</code>, type <code>%APPDATA%</code>, and press Enter.</li>
+                <li>Locate the <code>Scrollix</code> folder.</li>
+                <li>Delete that entire folder, then empty the Recycle Bin.</li>
+                <li>To remove the App itself, uninstall Scrollix via Settings &rarr; Apps &rarr; Installed apps.</li>
+            </ol>
+
+            <p>
+                Deleting this folder permanently removes your Scrollix account, your stored Instagram
+                access tokens, every post and schedule you created, and all local logs.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>2. Delete Media From Your Own Google Cloud Storage Bucket</h2>
+            <p>
+                Scrollix uploads your images and videos to a Google Cloud Storage bucket that
+                <strong>you own and configure</strong> during onboarding, using your own Google Cloud
+                account. That bucket is yours. Scrollix LLC has no access to it and cannot read, modify,
+                or delete anything inside it.
+            </p>
+            <ol>
+                <li>Sign in to the <a href="https://console.cloud.google.com/storage/browser">Google Cloud Console</a> with your own Google account.</li>
+                <li>Open Cloud Storage and select the bucket you configured for Scrollix.</li>
+                <li>Delete the media objects you want removed, or delete the entire bucket.</li>
+            </ol>
+            <p>
+                Because you control this bucket, you may also set your own retention or lifecycle rules to
+                delete media automatically.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>3. Revoke Scrollix's Access to Your Instagram Account</h2>
+            <p>
+                Revoking access immediately invalidates the Instagram access token stored on your device,
+                so Scrollix can no longer connect to your Instagram account.
+            </p>
+            <ol>
+                <li>Open the Instagram app or go to <a href="https://www.instagram.com/">instagram.com</a>.</li>
+                <li>Go to <strong>Settings and privacy</strong> &rarr; <strong>Website permissions</strong> &rarr; <strong>Apps and websites</strong>.</li>
+                <li>Find <strong>Scrollix</strong> in the list and select <strong>Remove</strong>.</li>
+            </ol>
+            <p>
+                Posts already published to Instagram are content on your own Instagram account. To remove
+                those, delete them directly in Instagram — Scrollix cannot delete published posts for you.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Held by Third-Party Services</h2>
+            <p>
+                Scrollix sends limited data to third-party services to provide its features. Each is
+                governed by that provider's own privacy policy:
+            </p>
+            <ul>
+                <li><strong>Meta / Instagram</strong> — your published posts and account data, removable through Instagram as described above.</li>
+                <li><strong>Google Gemini</strong> — images sent for AI caption generation, if you use that feature.</li>
+                <li><strong>Brevo</strong> — your email address, used only to send password reset emails. To request removal, email us and we will forward the request.</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h3>Questions About Deleting Your Data</h3>
+            <p>
+                If you have questions about these instructions, or need help removing your data, contact us
+                and we will assist you:
+            </p>
+            <p>
+                <strong>Scrollix LLC</strong><br>
+                Fort Collins, CO<br>
+                Email: <a href="mailto:support@scrollix.app">support@scrollix.app</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
