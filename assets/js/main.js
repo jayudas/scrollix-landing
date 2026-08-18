@@ -37,6 +37,9 @@ function handleCTAClick() {
     checkout.open({
       plan_id: '57318',
       licenses: 1,
+      // Launch-offer coupon (list $49.99 − $16.66 = $33.33). Must match the
+      // active coupon code configured in the Freemius dashboard.
+      coupon: 'NIX33',
       success: () => {
         handlePurchaseSuccess();
       }
